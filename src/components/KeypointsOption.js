@@ -5,7 +5,7 @@ const COLOR = "#E2FFC6";
 
 export class KeypointsOption extends Option {
   draw(canvasContext, face) {
-    if (!this.isEnabled) {
+    if (!this.isEnabled()) {
       return this;
     }
 

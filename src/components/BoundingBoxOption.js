@@ -2,7 +2,7 @@ import { Option } from "./Option";
 
 export class BoundingBoxOption extends Option {
   draw(canvasContext, face) {
-    if (!this.isEnabled) {
+    if (!this.isEnabled()) {
       return this;
     }
 

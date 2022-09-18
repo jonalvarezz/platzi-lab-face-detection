@@ -2,7 +2,7 @@ import { Option } from "./Option";
 
 export class MeshOption extends Option {
   draw(canvasContext, face) {
-    if (!this.isEnabled) {
+    if (!this.isEnabled()) {
       return this;
     }
 
