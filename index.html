@@ -40,7 +40,7 @@
               aria-expanded="false"
               data-toggle-extra-targets="svg"
             >
-              <span class="font-medium text-gray-900">Opciones</span>
+              <span class="font-medium text-gray-900">Options</span>
               <span class="ml-6 flex items-center">
                 <svg
                   class="h-5 w-5"
@@ -70,33 +70,7 @@
             </button>
           </h3>
           <div class="pt-6 hidden" id="js-toggle-options">
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <input
-                  id="filter-color-0"
-                  name="color[]"
-                  value="mesh"
-                  type="checkbox"
-                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                />
-                <label for="filter-color-0" class="ml-3 text-sm text-gray-600"
-                  >Mesh</label
-                >
-              </div>
-
-              <div class="flex items-center">
-                <input
-                  id="filter-color-1"
-                  name="color[]"
-                  value="box"
-                  type="checkbox"
-                  class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                />
-                <label for="filter-color-1" class="ml-3 text-sm text-gray-600"
-                  >Bounding box</label
-                >
-              </div>
-            </div>
+            <div class="space-y-4" id="js-options"></div>
           </div>
         </div>
       </sidebar>
