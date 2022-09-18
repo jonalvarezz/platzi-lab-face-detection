@@ -9,22 +9,22 @@ export class MeshOption extends Option {
     const [rightEye, leftEye, noseTip, mouthCenter, rightEar, leftEar] =
       face.keypoints;
 
-    ctx.beginPath();
-    ctx.moveTo(leftEye.x, leftEye.y);
-    ctx.lineTo(rightEye.x, rightEye.y);
-    ctx.lineTo(rightEar.x, rightEar.y);
-    ctx.lineTo(mouthCenter.x, mouthCenter.y);
-    ctx.lineTo(leftEar.x, leftEar.y);
-    ctx.lineTo(leftEye.x, leftEye.y);
+    canvasContext.beginPath();
+    canvasContext.moveTo(leftEye.x, leftEye.y);
+    canvasContext.lineTo(rightEye.x, rightEye.y);
+    canvasContext.lineTo(rightEar.x, rightEar.y);
+    canvasContext.lineTo(mouthCenter.x, mouthCenter.y);
+    canvasContext.lineTo(leftEar.x, leftEar.y);
+    canvasContext.lineTo(leftEye.x, leftEye.y);
 
-    ctx.moveTo(noseTip.x, noseTip.y);
-    ctx.lineTo(leftEye.x, leftEye.y);
-    ctx.moveTo(noseTip.x, noseTip.y);
-    ctx.lineTo(rightEye.x, rightEye.y);
+    canvasContext.moveTo(noseTip.x, noseTip.y);
+    canvasContext.lineTo(leftEye.x, leftEye.y);
+    canvasContext.moveTo(noseTip.x, noseTip.y);
+    canvasContext.lineTo(rightEye.x, rightEye.y);
 
-    ctx.strokeStyle = "#ffc600";
-    ctx.lineWidth = 2;
-    ctx.stroke();
+    canvasContext.strokeStyle = "#ffc600";
+    canvasContext.lineWidth = 2;
+    canvasContext.stroke();
 
     return this;
   }

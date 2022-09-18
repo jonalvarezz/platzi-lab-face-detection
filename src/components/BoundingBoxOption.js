@@ -8,9 +8,9 @@ export class BoundingBoxOption extends Option {
 
     const { width, height, yMin: top, xMin: left } = face.box;
 
-    ctx.strokeStyle = "#ffc600";
-    ctx.lineWidth = 2;
-    ctx.strokeRect(left, top, width, height);
+    canvasContext.strokeStyle = "#ffc600";
+    canvasContext.lineWidth = 2;
+    canvasContext.strokeRect(left, top, width, height);
 
     return this;
   }
