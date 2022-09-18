@@ -24,6 +24,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@mediapipe/face_detection": "^0.4.1646425229",
+    "@tensorflow-models/face-detection": "^1.0.1",
+    "@tensorflow/tfjs-backend-webgl": "^3.20.0",
+    "@tensorflow/tfjs-core": "^3.20.0",
     "hyperscript": "^2.0.2"
   }
 }
