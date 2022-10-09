@@ -9,13 +9,13 @@ import { Logger } from "../utils/log";
 const logger = new Logger("detector");
 
 export class FaceDetector {
-  enabled = false;
+  enabled = true;
   /**
-   * @property {import("@tensorflow-models/face-detection").FaceDetector} detector
+   * @type {import("@tensorflow-models/face-detection").FaceDetector} detector
    */
   detector = null;
   /**
-   * @property {HTMLVideoElement | HTMLImageElement}
+   * @type {HTMLVideoElement | HTMLImageElement}
    */
   media = null;
 
@@ -65,19 +65,18 @@ export class FaceDetector {
     return faces;
   }
 
-  async subscribe(callback) {
+  subscribe(callback) {
     if (!this.detector) {
       throw new Error("Face detector not initialized");
     }
 
-    const faces = await this.detector.detect(this.media);
-    callback(faces);
+    this.detect(this.media).then(callback);
 
     if (this.enabled) {
-      window.requestAnimationFrame(() => this.subscribe.bind(this, callback));
+      window.requestAnimationFrame(this.subscribe.bind(this, callback));
     }
 
-    return this.unsubscribe;
+    return this;
   }
 
   unsubscribe() {
