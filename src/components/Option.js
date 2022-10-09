@@ -1,6 +1,7 @@
 import h from "hyperscript";
+import { Filter } from "../controllers/Filter";
 
-export class Option {
+export class Option extends Filter {
   name = "";
   label = "";
   element = null;
@@ -12,6 +13,7 @@ export class Option {
    * @param {HTMLElement} container
    */
   constructor(name, label, container = null) {
+    super();
     this.name = name;
     this.label = label;
 
@@ -43,14 +45,6 @@ export class Option {
     this.element = input;
 
     container.appendChild(h("div.flex.items-center", input, label));
-  }
-
-  /**
-   * Draw the filter on the canvas
-   * @param {CanvasRenderingContext2D} canvasContext
-   */
-  draw(canvasContext, face) {
-    throw new Error("Not implemented");
   }
 
   isEnabled() {
