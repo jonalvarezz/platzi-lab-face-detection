@@ -3,8 +3,6 @@ const defaultOptions = {
    * @type {"video" | "image"}
    */
   type: "video",
-  width: 1280,
-  height: 720,
   /**
    * The image source when type is "image"
    */
@@ -64,10 +62,6 @@ export class UserMedia {
    * @returns {Promise<HTMLVideoElement | HTMLImageElement>}
    */
   async init() {
-    const { height, width } = this.options;
-    this.canvas.width = width;
-    this.canvas.height = height;
-
     if (this.options.type === "image") {
       this.media.src = this.options.src;
       this.media.onload = () => {

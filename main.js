@@ -12,8 +12,6 @@ import { BoundingBoxOption } from "./src/components/BoundingBoxOption";
 const userMedia = new UserMedia(document.querySelector(".js-media-container"), {
   type: "image",
   src: "platzi.jpg",
-  width: 640,
-  height: 480,
   onCanvasCreated: (canvas) => {
     canvas.className = "absolute top-0 left-0 w-full h-full";
     return canvas;
