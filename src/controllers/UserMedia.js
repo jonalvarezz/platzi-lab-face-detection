@@ -73,6 +73,15 @@ export class UserMedia {
       this.media.onload = () => {
         this.canvas.width = this.media.width;
         this.canvas.height = this.media.height;
+
+        if (
+          this.media.width !== this.media.naturalWidth ||
+          this.media.height !== this.media.naturalHeight
+        ) {
+          console.warn(
+            "Heads up: image is scaled. This may affect the face detecting results"
+          );
+        }
       };
 
       return this.media;
