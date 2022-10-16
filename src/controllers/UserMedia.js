@@ -70,8 +70,15 @@ export class UserMedia {
 
     if (this.options.type === "image") {
       this.media.src = this.options.src;
+      this.media.onload = () => {
+        this.canvas.width = this.media.width;
+        this.canvas.height = this.media.height;
+      };
+
       return this.media;
     }
+
+    // TODO: Complete this for video support
 
     return this.media;
   }
