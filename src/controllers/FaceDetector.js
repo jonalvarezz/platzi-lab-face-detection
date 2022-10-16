@@ -14,17 +14,6 @@ export class FaceDetector {
    * @type {import("@tensorflow-models/face-detection").FaceDetector} detector
    */
   detector = null;
-  /**
-   * @type {HTMLVideoElement | HTMLImageElement}
-   */
-  media = null;
-
-  /**
-   * @param {HTMLVideoElement | HTMLImageElement} media
-   */
-  constructor(media) {
-    this.media = media;
-  }
 
   /**
    *
@@ -48,7 +37,12 @@ export class FaceDetector {
     return this;
   }
 
-  async detect() {
+  /**
+   *
+   * @param {HTMLVideoElement | HTMLImageElement} media
+   * @returns {Promise<Array<import("@tensorflow-models/face-detection").Face>>}
+   */
+  async detect(media) {
     if (!this.detector) {
       throw new Error("Face detector not initialized");
     }
@@ -56,24 +50,25 @@ export class FaceDetector {
     logger.log("Detecting faces...");
     const estimationConfig = { flipHorizontal: false };
 
-    const faces = await this.detector.estimateFaces(
-      this.media,
-      estimationConfig
-    );
+    const faces = await this.detector.estimateFaces(media, estimationConfig);
     logger.log(`Found ${faces.length} faces`);
 
     return faces;
   }
 
-  subscribe(callback) {
+  /**
+   * @param {HTMLVideoElement | HTMLImageElement} media
+   * @param {(faces: Array<import("@tensorflow-models/face-detection").Face>) => void} callback
+   */
+  subscribe(media, callback) {
     if (!this.detector) {
       throw new Error("Face detector not initialized");
     }
 
-    this.detect(this.media).then(callback);
+    this.detect(media).then(callback);
 
     if (this.enabled) {
-      window.requestAnimationFrame(this.subscribe.bind(this, callback));
+      window.requestAnimationFrame(this.subscribe.bind(this, media, callback));
     }
 
     return this;

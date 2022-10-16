@@ -20,7 +20,7 @@ const userMedia = new UserMedia(document.querySelector(".js-media-container"), {
   },
 });
 
-const faceDetector = new FaceDetector(userMedia.getMedia());
+const faceDetector = new FaceDetector();
 
 // Set up options/ filters
 const optionsContainer = document.querySelector("#js-options");
@@ -42,8 +42,8 @@ const faceFilters = new FaceFilters(userMedia.getCanvas(), filters);
 
 // Start the app
 async function app() {
-  await Promise.all([userMedia.init(), faceDetector.init()]);
+  const [media, _] = await Promise.all([userMedia.init(), faceDetector.init()]);
 
-  faceDetector.subscribe(faceFilters.render.bind(faceFilters));
+  faceDetector.subscribe(media, faceFilters.render.bind(faceFilters));
 }
 app();
