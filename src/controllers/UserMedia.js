@@ -82,7 +82,12 @@ export class UserMedia {
     }
 
     // TODO: Complete this for video support
+    if (this.options.type === "video") {
+      throw new Error("Video media not supported yet");
 
-    return this.media;
+      return this.media;
+    }
+
+    throw new Error("Media type not supported");
   }
 }
