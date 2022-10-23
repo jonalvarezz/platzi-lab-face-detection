@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body
-    class="font-medium text-gray-700 bg-slate-700 bg-repeat"
+    class="text-gray-700 bg-slate-700 bg-repeat"
     style="background-image: url(bg.png)"
   >
     <main class="w-full flex min-h-screen h-full">
@@ -24,61 +24,83 @@
           class="relative overflow-hidden border-8 sm:border-16 border-white shadow-lg js-media-container"
         ></div>
       </div>
-      <sidebar class="bg-white sm:w-1/3 p-4 sm:p-8">
+      <sidebar class="bg-white sm:w-1/3 p-4 sm:p-8 flex flex-col">
         <header class="border-b border-gray-200 py-6">
           <h1 class="text-lg text-gray-900">🙈 Platzi Lab: Face detection</h1>
         </header>
-        <div x-data="{ open: false }" class="border-b border-gray-200 py-6">
-          <h3 class="-my-3 flow-root">
-            <button
-              type="button"
-              data-control="toggle"
-              class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
-              aria-controls="js-toggle-options"
-              aria-expanded="false"
-              data-toggle-extra-targets="svg"
+        <section>
+          <div x-data="{ open: false }" class="border-b border-gray-200 py-6">
+            <h3 class="-my-3 flow-root font-medium">
+              <button
+                type="button"
+                data-control="toggle"
+                class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
+                aria-controls="js-toggle-options"
+                aria-expanded="false"
+                data-toggle-extra-targets="svg"
+              >
+                <span class="font-medium text-gray-900">Options</span>
+                <span class="ml-6 flex items-center">
+                  <svg
+                    class="h-5 w-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                    ></path>
+                  </svg>
+                  <svg
+                    class="h-5 w-5 hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div class="pt-6 hidden" id="js-toggle-options">
+              <div class="space-y-4" id="js-options"></div>
+            </div>
+          </div>
+          <div class="border-b border-gray-200 py-6">
+            <h3 class="-my-3 bg-white py-3 text-sm font-medium text-gray-900">
+              Filters
+            </h3>
+            <div class="pt-6">
+              <div class="space-y-4" id="js-filters"></div>
+            </div>
+          </div>
+        </section>
+        <footer
+          class="w-full text-center mt-auto px-2 pt-6 text-xs text-gray-400"
+        >
+          <p>
+            Made by
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://twitter.com/jonalvarezz"
+              >@jonalvarezz 🦑</a
             >
-              <span class="font-medium text-gray-900">Options</span>
-              <span class="ml-6 flex items-center">
-                <svg
-                  class="h-5 w-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
-                  ></path>
-                </svg>
-                <svg
-                  class="h-5 w-5 hidden"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M3 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H3.75A.75.75 0 013 10z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-          </h3>
-          <div class="pt-6 hidden" id="js-toggle-options">
-            <div class="space-y-4" id="js-options"></div>
-          </div>
-        </div>
-        <div class="border-b border-gray-200 py-6">
-          <h3 class="-my-3 bg-white py-3 text-sm font-medium text-gray-900">
-            Filters
-          </h3>
-          <div class="pt-6">
-            <div class="space-y-4" id="js-filters"></div>
-          </div>
-        </div>
+            for
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://twitter.com/platzi"
+              >@platzi</a
+            >
+          </p>
+        </footer>
       </sidebar>
     </main>
 
