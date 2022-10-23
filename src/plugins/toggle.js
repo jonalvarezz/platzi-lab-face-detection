@@ -19,10 +19,9 @@ document.body.addEventListener("click", toggle);
  *
  */
 function toggle(event) {
-  const control = event.target;
-  logger.log("click", control);
+  const control = parentMatches(event.target, SELECTOR);
 
-  if (!control || !control.matches(SELECTOR)) {
+  if (!control) {
     logger.log("control does not match SELECTOR");
     return;
   }
@@ -69,4 +68,16 @@ function toggle(event) {
   extraTargets.forEach((extraTarget) => {
     extraTarget.classList.toggle("hidden");
   });
+}
+
+function parentMatches(element, selector) {
+  if (!element || !selector) {
+    return null;
+  }
+
+  if (element.matches(selector)) {
+    return element;
+  }
+
+  return parentMatches(element.parentElement, selector);
 }
