@@ -74,6 +74,9 @@ export class FaceDetector {
     return this;
   }
 
+  /**
+   * Stops the face detector
+   */
   unsubscribe() {
     this.enabled = false;
   }

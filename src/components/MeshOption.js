@@ -1,6 +1,10 @@
 import { Option } from "./Option";
 
 export class MeshOption extends Option {
+  /**
+   * @param {CanvasRenderingContext2D} canvasContext
+   * @param {Face} face
+   */
   draw(canvasContext, face) {
     if (!this.isEnabled()) {
       return this;

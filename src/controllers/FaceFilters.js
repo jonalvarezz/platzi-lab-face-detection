@@ -25,6 +25,9 @@ export class FaceFilters {
     this.filters = filters.map(this.validateFilter);
   }
 
+  /**
+   * @param {Array<import("@tensorflow-models/face-detection").Face>} faces
+   */
   render(faces) {
     this.clear();
     faces.forEach((face, index) => {

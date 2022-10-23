@@ -4,6 +4,9 @@ import { Filter } from "../controllers/Filter";
 export class Option extends Filter {
   name = "";
   label = "";
+  /**
+   * @type {HTMLInputElement}
+   */
   element = null;
 
   /**
@@ -24,7 +27,7 @@ export class Option extends Filter {
 
   /**
    * Render the filter options
-   * @param {HTMLElement} container
+   * @param {HTMLDivElement} container
    */
   render(container) {
     const label = h(
