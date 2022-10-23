@@ -27,8 +27,10 @@ export class FaceFilters {
 
   render(faces) {
     this.clear();
-    faces.forEach((face) => {
-      this.filters.forEach((filter) => filter.draw(this.canvasContext, face));
+    faces.forEach((face, index) => {
+      this.filters.forEach((filter) =>
+        filter.draw(this.canvasContext, face, index)
+      );
     });
   }
 
