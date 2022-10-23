@@ -1,12 +1,27 @@
 /**
- * Enable the logger by setting the URL parameter `?debug=1`
+ * Logger
+ * Enable the logger by setting the URL parameter to the given context `?debug=context`
+ *
+ * @example
+ * const myLogger = new Logger("myContext");
+ * myLogger.log("Hello world");
+ *
+ * // Append `?debug=myContext` to your URL to enable the logger
  */
-const DEBUG = window.location.search.includes("debug") || false;
-
 export class Logger {
-  constructor(context, debug = DEBUG) {
+  constructor(context, debug = false) {
     this.context = context;
-    this.debug = debug;
+    this.debug = debug || this.shouldDebug();
+  }
+
+  shouldDebug() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      console.log(params);
+      return params.get("debug") === this.context;
+    } catch (error) {
+      return false;
+    }
   }
 
   log(...args) {
