@@ -81,9 +81,17 @@ export class UserMedia {
       return this.media;
     }
 
-    // TODO: Complete this for video support
     if (this.options.type === "video") {
-      throw new Error("Video media not supported yet");
+      const width = 640;
+      const height = 480;
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { width, height },
+      });
+      this.canvas.width = width;
+      this.canvas.height = height;
+
+      this.media.srcObject = stream;
+      await this.media.play();
 
       return this.media;
     }
