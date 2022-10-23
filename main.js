@@ -4,9 +4,7 @@ import { FaceDetector } from "./src/controllers/FaceDetector";
 import { UserMedia } from "./src/controllers/UserMedia";
 import { FaceFilters } from "./src/controllers/FaceFilters";
 
-import { MeshOption } from "./src/components/MeshOption";
-import { KeypointsOption } from "./src/components/KeypointsOption";
-import { BoundingBoxOption } from "./src/components/BoundingBoxOption";
+import { options, filters } from "./src/filters";
 
 // Set up the user media
 const userMedia = new UserMedia(document.querySelector(".js-media-container"), {
@@ -21,22 +19,10 @@ const userMedia = new UserMedia(document.querySelector(".js-media-container"), {
 const faceDetector = new FaceDetector();
 
 // Set up options/ filters
-const optionsContainer = document.querySelector("#js-options");
-
-const mesh = new MeshOption("mesh", "Mesh", optionsContainer);
-const keypoints = new KeypointsOption(
-  "keypoints",
-  "Keypoints",
-  optionsContainer
-);
-const boundingBox = new BoundingBoxOption(
-  "box",
-  "Bounding box",
-  optionsContainer
-);
-
-const filters = [mesh, keypoints, boundingBox];
-const faceFilters = new FaceFilters(userMedia.getCanvas(), filters);
+const faceFilters = new FaceFilters(userMedia.getCanvas(), [
+  ...options,
+  ...filters,
+]);
 
 // Start the app
 async function app() {
