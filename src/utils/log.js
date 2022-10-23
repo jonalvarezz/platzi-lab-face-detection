@@ -17,7 +17,6 @@ export class Logger {
   shouldDebug() {
     try {
       const params = new URLSearchParams(window.location.search);
-      console.log(params);
       return params.get("debug") === this.context;
     } catch (error) {
       return false;
