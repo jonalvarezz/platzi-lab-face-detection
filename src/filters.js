@@ -23,5 +23,5 @@ export const options = [mesh, keypoints, boundingBox];
 // Set up filters
 const filtersContainer = document.querySelector("#js-filters");
 
-const myFilter = new MyFilter("my-filter", "My filter", filtersContainer);
+const myFilter = new MyFilter("my-filter", "Random Pokemon", filtersContainer);
 export const filters = [myFilter];
