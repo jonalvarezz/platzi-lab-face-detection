@@ -8,7 +8,7 @@ import { options, filters } from "./src/filters";
 
 // Set up the user media
 const userMedia = new UserMedia(document.querySelector(".js-media-container"), {
-  type: "image",
+  type: "video",
   src: "platzi.jpg",
   onCanvasCreated: (canvas) => {
     canvas.className = "absolute top-0 left-0 w-full h-full";
