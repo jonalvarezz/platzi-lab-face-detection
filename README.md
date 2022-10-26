@@ -28,7 +28,7 @@ Este es el repositorio en donde construimos el primer prototipo de la aplicació
 
 ### ¿Qué hay en este repositorio?
 
-Este repositorio contiene el prototipo inicial. Este prototipo fue construido utilizando Vite así que funciona como una aplicación de cliente, es decir, no tiene backend.
+Este repositorio contiene el prototipo inicial. Este prototipo fue construido utilizando [Vite](https://vitejs.dev) así que funciona como una aplicación meramente de cliente, es decir, no tiene backend.
 
 Dentro de `src` podrás encontrar toda la lógica de negocios y algunos controladores que hacen todo posible. Como co-founder eres libre de cambiar todo, aunque ten en cuenta que la prioridad es cumplir con los primeros dos puntos esperados por los inversionistas.
 
