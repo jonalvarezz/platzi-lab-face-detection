@@ -59,7 +59,7 @@ Dentro de `src` podrás encontrar toda la lógica de negocios y algunos controla
 
 Ayuda a otros estudiantes con eso que acabas de descubrir que haría este curso y respositorio mucho mejor.
 
-- En [Issues](https://github.com/jonalvarezz/laboratorio-face-detection/issues/new) puedes reportar errores, agregar sugerencias y comentarios.
-- Por su parte, los [Pull Request](https://github.com/jonalvarezz/laboratorio-face-detection/pulls) siempre estarán abiertos para recibir mejoras puntuales.
+- En [Issues](https://github.com/jonalvarezz/platzi-lab-face-detection/issues/new) puedes reportar errores, agregar sugerencias y comentarios.
+- Por su parte, los [Pull Request](https://github.com/jonalvarezz/platzi-lab-face-detection/pulls) siempre estarán abiertos para recibir mejoras puntuales.
 
 Happy hacking!
